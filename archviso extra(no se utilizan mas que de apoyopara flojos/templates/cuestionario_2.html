@@ -1,0 +1,75 @@
+{% extends 'cabezera.html' %}
+{% block content %}
+{% load static %}
+<form class=''action="{% url 'alumno'%}"method="post">
+    {% csrf_token %}
+    <h1><font color="white"><center>DATOS DEL ALUMNO</center></font></h1>
+
+
+    <h5><center><font color="white">APELLIDO PATERNO: </font><input name="apellidoP" type="text" placeholder="Escribe tu apellido paterno" required id="apellidoP"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">APELLIDO MATERNO: </font><input name="apellidoM" type="text" placeholder="Escribe tu apellido paterno" required id="apellidoM"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">NOMBRE: </font><input name="nombre" type="text"placeholder="Escribe tu nombre" required id="nombre"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5>
+    <h5><center>
+        <font color="white">CURP: </font><input name="curp" type="text" maxlength="18" placeholder="Escribe tu curp"required id="curp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">FECHA DE NACIMIENTO: </font><input name="nacimiento" type="date" placeholder="Escribe tu fecha de nacimiento"required id="fechaN">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">GÉNERO:</font><select name="sexo"required id="sexo"><option value="hombre">Hombre</option><option value="mujer">Mujer</option><option value="indefinido">Prefiero no decirlo</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5>
+    <h5><center>
+        <font color="white">Nacionalidad: </font>
+            <select name="nacionalidad"required id="nacion">
+              <option value="US">Estados Unidos</option><option value="EE">Estonia</option><option value="ET">Etiopía</option><option value="FJ">Fiji</option><option value="PH">Filipinas</option>
+              <option value="FI">Finlandia</option><option value="FR">Francia</option><option value="GA">Gabón</option><option value="GM">Gambia</option><option value="GE">Georgia</option>
+              <option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GD">Granada</option><option value="GR">Grecia</option><option value="GL">Groenlandia</option>
+              <option value="GP">Guadalupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GY">Guayana</option><option value="GF">Guayana Francesa</option>
+              <option value="GN">Guinea</option><option value="GQ">Guinea Ecuatorial</option><option value="GW">Guinea-Bissau</option><option value="HT">Haití</option>
+              <option value="HN">Honduras</option><option value="HU">Hungría</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IQ">Irak</option>
+              <option value="IR">Irán</option><option value="IE">Irlanda</option><option value="BV">Isla Bouvet</option><option value="CX">Isla de Christmas</option><option value="IS">Islandia</option>
+              <option value="KY">Islas Caimán</option><option value="CK">Islas Cook</option><option value="CC">Islas de Cocos o Keeling</option><option value="FO">Islas Faroe</option><option value="HM">Islas Heard y McDonald</option><option value="FK">Islas Malvinas</option><option value="MP">Islas Marianas del Norte</option><option value="MH">Islas Marshall</option>
+              <option value="UM">Islas menores de Estados Unidos</option><option value="PW">Islas Palau</option><option value="SB">Islas Salomón</option><option value="SJ">Islas Svalbard y Jan Mayen</option><option value="TK">Islas Tokelau</option>
+              <option value="TC">Islas Turks y Caicos</option><option value="VI">Islas Vírgenes (EEUU)</option><option value="VG">Islas Vírgenes (Reino Unido)</option><option value="WF">Islas Wallis y Futuna</option><option value="IL">Israel</option><option value="IT">Italia</option><option value="JM">Jamaica</option><option value="JP">Japón</option>
+              <option value="JO">Jordania</option><option value="KZ">Kazajistán</option><option value="KE">Kenia</option><option value="KG">Kirguizistán</option><option value="KI">Kiribati</option>
+              <option value="KW">Kuwait</option><option value="LA">Laos</option><option value="LS">Lesotho</option><option value="LV">Letonia</option>
+              <option value="LB">Líbano</option><option value="LR">Liberia</option><option value="LY">Libia</option><option value="LI">Liechtenstein</option><option value="LT">Lituania</option><option value="LU">Luxemburgo</option><option value="MK">Macedonia, Ex-República Yugoslava de</option>
+              <option value="MG">Madagascar</option><option value="MY">Malasia</option><option value="MW">Malawi</option><option value="MV">Maldivas</option><option value="ML">Malí</option>
+              <option value="MT">Malta</option><option value="MA">Marruecos</option><option value="MQ">Martinica</option><option value="MU">Mauricio</option>
+              <option value="MR">Mauritania</option><option value="YT">Mayotte</option><option value="MX"selected>Mexico</option><option value="FM">Micronesia</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <font color="white">Estado civil:</font><select name="estado civil"required id="estado civil"><option value="soltero">soltero</option><option value="casado">casado</option><option value="union libre">union libre</option><option value="4">prefiero no decirlo</option></select>
+    </center></h5><br>
+    <h1><font color="white"><center>CONTACTO DEL ALUMNO</center></font></h1>
+    
+
+    <h5><center><font color="white">CALLE: </font><input name="CALLE" type="text" placeholder="Escribe el nombre de tu calle" required id="CALLE"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">DELEGACIÓN O MUNICIPIO: </font><input name="DEL_O_MUN" type="text" placeholder="Escribe el nombre de tu delegacion oh municipio" required id="MUNICIPIO"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">COLONIA: </font><input name="COLONIA" type="text"placeholder="Escribe el nombre de tu colonia" required id="colonia"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5>
+    <h5><center>
+        <font color="white">NÚMERO DE CASA: </font><input name="numero" type="text" placeholder="Escribe el numero de tu casa"required id="NUMERO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">CÓDIGO POSTAL:</font><input name="CODIGO" type="text" placeholder="Escribe tu codigo postal"required id="POSTAL">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5>
+    <h5><center>
+        <font color="white">CORREO ELECTRÓNICO: </font><input name="correo electronico" type="email" placeholder="Escribe tu correo electronico"required id="correo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">NÚMERO DE TELÉFONO: </font><input name="telefono" type="number" placeholder="Escribe tu numero de telefono"required id="telefono">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5>
+    <h5><center>
+        <font color="white">NÚMERO DE TELÉFONO DE UN FAMILIAR: </font><input name="telefonof" type="number" placeholder="Escribe el numero de telefono de un familiar de confianza"required id="telefonoF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </h5></center>
+    <h1><font color="white"><center>DATOS MÉDICOS </center></font></h1>
+    <h5><center><br>
+        <font color="white">TIPO DE SANGRE:</font><select name="sangre" required id="sangre"><option value="A+">A+</option><option value="A-">A-</option><option value="B+">B+</option><option value="B-">B</option><option value="AB+">AB+</option><option value="AB-">AB-</option><option value="O+">O+</option><option value="O-">O-</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">SUFRES DISCAPACIDAD VISUAL:</font><select name="VISUAL" required id="VISUAL"><option value="SI">SI</option><option value="NO">NO</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">SUFRES DISCAPACIDAD AUDITIVA:</font><select name="AUDITIVA" required id="AUDITIVA"><option value="SI">SI</option><option value="NO">NO</option></select><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">SUFRES DISCAPACIDAD VOCAL:</font><select name="VOCAL" required id="VOCAL"><option value="SI">SI</option><option value="NO">NO</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">SUFRES DISCAPACIDAD MOTRIZ:</font><select name="MOTRIS" required id="MOTRIS"><option value="SI">SI</option><option value="NO">NO</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5><br>
+    <h1><font color="white"><center>ESCUELA DE PROCEDENCIA </center></font></h1>
+    <h5><center>
+        <font color="white">Nombre de la secundaria: </font><input name="secundaria" type="text"placeholder="Escribe el nombre de tu escuela de procedencia" required id="secundaria"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white"> Clave: </font><input name="clave" type="text"placeholder="Escribe la clave de tu escuela de procedencia" required id="clave"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">Tipo de escuela:</font><select name="tipo_sec" required id="tipo-sec"><option value="General">General</option><option value="Tecnica">Tecnica</option><option value="telesecundaria">telesecundaria</option></select><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <font color="white">Escribe tu promedio final de secundaria: </font><input name="promedio" type="number" min="6"max="10" placeholder="Promedio final de secundaria" required id="promedio"\>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </center></h5><br>
+    <center><a  href="{% url 'cues3'%}"><button type="submit" class="btn btn-outline-primary">Siguiente -->></button></a></center></center>
+</form>
+    <br><br>
+{%endblock%}
